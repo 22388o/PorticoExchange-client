@@ -1,4 +1,4 @@
-# LN-STX Bridge Client
+# Portico Exchange Client
 
 This is a light client to interface with [PorticoExchange](https://github.com/PorticoExchange/PorticoExchangeFrontendV2) to facilitate submarine/atomic swaps between Lightning Network/onchain BTC <-> Liquid Network/RSK/RGB/LNURL
 
