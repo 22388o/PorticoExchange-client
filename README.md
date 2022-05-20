@@ -1,11 +1,10 @@
 # LN-STX Bridge Client
 
-This is a light client to interface with [lnstxbridge](https://github.com/pseudozach/lnstxbridge) to facilitate submarine/atomic swaps between Lightning Network/onchain BTC <-> STX/USDA/(Any SIP10 token) on Stacks
+This is a light client to interface with [PorticoExchange](https://github.com/PorticoExchange/PorticoExchangeFrontendV2) to facilitate submarine/atomic swaps between Lightning Network/onchain BTC <-> Liquid Network/RSK/RGB/LNURL
 
 * Allows client to register to main lnstxbridge instance in order to signal supported pairs.
 * Accept and Execute trustless swaps
-* Running on https://lnswap.org
-> In order to join the aggregator lnswap.org send an email to [join@lnswap.org](mailto:join@lnswap.org) to be added to access list.
+* Running on https://porticoexchangetestnet.vercel.app/
 
 ## install with script (experimental)
 * copy and paste the below command into your umbrel/raspiblitz/mynode and follow the instructions  
@@ -25,7 +24,7 @@ This is a light client to interface with [lnstxbridge](https://github.com/pseudo
 `npm run start`
 
 ## Docs
-Documentation available at [lnswap docs](https://docs.lnswap.org/quick-start).
+Documentation available at [Portico Exchange Docs](https://layertwolabs.gitbook.io/portico-exchange/).
 
 ## Acknowledgements
 This is a simplified fork of lnstxbridge which is a fork of [boltz](https://github.com/BoltzExchange)
