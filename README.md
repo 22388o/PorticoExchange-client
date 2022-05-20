@@ -27,4 +27,4 @@ This is a light client to interface with [PorticoExchange](https://github.com/Po
 Documentation available at [Portico Exchange Docs](https://layertwolabs.gitbook.io/portico-exchange/).
 
 ## Acknowledgements
-This is a simplified fork of lnstxbridge which is a fork of [boltz](https://github.com/BoltzExchange)
+This is a simplified fork of Portico Exchange which is a fork of [boltz](https://github.com/BoltzExchange)
