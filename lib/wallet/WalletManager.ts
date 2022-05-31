@@ -64,6 +64,7 @@ class WalletManager {
   public ethereumManager?: EthereumManager;
   public rskManager?: RskManager;
   public stacksManager?: StacksManager;
+  public liquidManager?: LiquidManager;
 
   private readonly mnemonic: string;
   private readonly masterNode: BIP32Interface;
@@ -71,7 +72,7 @@ class WalletManager {
 
   private readonly derivationPath = 'm/0';
 
-  constructor(private logger: Logger, mnemonicPath: string, private currencies: Currency[], ethereumManager?: EthereumManager, rskManager?: RskManager, stacksManager?: StacksManager) {
+  constructor(private logger: Logger, mnemonicPath: string, private currencies: Currency[], ethereumManager?: EthereumManager, rskManager?: RskManager, stacksManager?: StacksManager, liquidManger?: LiquidManager) {
     this.mnemonic = this.loadMnemonic(mnemonicPath);
     this.masterNode = bip32.fromSeed(mnemonicToSeedSync(this.mnemonic));
 
@@ -80,12 +81,14 @@ class WalletManager {
     this.ethereumManager = ethereumManager;
     this.rskManager = rskManager;
     this.stacksManager = stacksManager;
+    this.liquidMangaer = liquidManager;
+    
   }
 
   /**
    * Initializes a new WalletManager with a mnemonic
    */
-  public static fromMnemonic = (logger: Logger, mnemonic: string, mnemonicPath: string, currencies: Currency[], ethereumManager?: EthereumManager, rskManager?: RskManager, stacksManager?: StacksManager): WalletManager => {
+  public static fromMnemonic = (logger: Logger, mnemonic: string, mnemonicPath: string, currencies: Currency[], ethereumManager?: EthereumManager, rskManager?: RskManager, stacksManager?: StacksManager, liquidManger?: LiquidManager): WalletManager => {
     if (!validateMnemonic(mnemonic)) {
       throw(Errors.INVALID_MNEMONIC(mnemonic));
     }
