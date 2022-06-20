@@ -1,5 +1,3 @@
-
-
 import { Op } from 'sequelize';
 import { EventEmitter } from 'events';
 import { BigNumber, ContractTransaction } from 'ethers';
@@ -17,20 +15,20 @@ import { CurrencyType, SwapUpdateEvent } from '../consts/Enums';
 import RskManager from '../wallet/rsk/RskManager';
 import { ERC20SwapValues, EtherSwapValues } from '../consts/Types';
 import { getChainCurrency, getHexString, splitPairId } from '../Utils';
-import ERC20WalletProvider from '../wallet/providers/ERC20WalletProvider';
+import MarinaalletProvider from '../wallet/providers/MarinaWalletProvider';
 
-interface RskNursery {
-  // EtherSwap
-  on(event: 'eth.lockup', listener: (swap: Swap, transactionHash: string, etherSwapValues: EtherSwapValues) => void): this;
-  emit(event: 'eth.lockup', swap: Swap, transactionHash: string, etherSwapValues: EtherSwapValues): boolean;
+interface LiquidNursery{
+  // LiquidBitcoinSwap
+  on(event: 'lbtc.lockup', listener: (swap: Swap, transactionHash: string, etherSwapValues: LBTCSwapValues) => void): this;
+  emit(event: 'lbtcl.ockup', swap: Swap, transactionHash: string, lbtcSwapValues: LBTCSwapValues): boolean;
 
-  // ERC20Swap
-  on(event: 'erc20.lockup', listener: (swap: Swap, transactionHash: string, erc20SwapValues: ERC20SwapValues) => void): this;
-  emit(event: 'erc20.lockup', swap: Swap, transactionHash: string, erc20SwapValues: ERC20SwapValues): boolean;
+  // LBTCSwap
+  on(event: 'lbtc.lockup', listener: (swap: Swap, transactionHash: string, erc20SwapValues: LBTCSwapValues) => void): this;
+  emit(event: 'lbtc.lockup', swap: Swap, transactionHash: string, erc20SwapValues: ERC20SwapValues): boolean;
 
   // Events used for both contracts
-  on(event: 'swap.expired', listener: (swap: Swap, isEtherSwap: boolean) => void): this;
-  emit(event: 'swap.expired', swap: Swap, isEtherSwap: boolean);
+  on(event: 'swap.expired', listener: (swap: Swap, isLBTCSwap: boolean) => void): this;
+  emit(event: 'swap.expired', swap: Swap, iLBTCSwap: boolean);
 
   on(event: 'lockup.failed', listener: (swap: Swap, reason: string) => void): this;
   emit(event: 'lockup.failed', swap: Swap, reason: string): boolean;
@@ -81,9 +79,9 @@ class RskNursery extends EventEmitter {
       const { base, quote } = splitPairId(mempoolReverseSwap.pair);
       const chainCurrency = getChainCurrency(base, quote, mempoolReverseSwap.orderSide, true);
 
-      // Skip all Reverse Swaps that didn't send coins on the Rsk chain
+      // Skip all Reverse Swaps that didn't send coins on the Liquid Chain
       if (this.getEthereumWallet(chainCurrency) === undefined) {
-        this.logger.error("RskNursery Skip all Reverse Swaps that didn't send coins on the Rsk chain");
+        this.logger.error("LiquidNursery Skip all Reverse Swaps that didn't send coins on the Liquid Chain");
         continue;
       }
 
@@ -93,7 +91,7 @@ class RskNursery extends EventEmitter {
         this.listenContractTransaction(mempoolReverseSwap, transaction);
       } catch (error) {
         // TODO: retry finding that transaction
-        // If the provider can't find the transaction, it is not on the Ethereum chain
+        // If the provider can't find the transaction, it is not on the Liquid Chain
       }
     }
   }
