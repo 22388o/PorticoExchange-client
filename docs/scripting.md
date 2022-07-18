@@ -7,6 +7,7 @@ Boltz theoretically supports three types of outputs and addresses:
 - P2SH
 - P2SH nested P2WSH
 - P2WSH
+- P2TR 
 
 Our instances are using *P2SH nested P2WSH* addresses for Submarine Swaps and *P2WSH* addresses for Reverse ones. The address type for Submarine Swaps is [configurable](deployment.md) and can be either *P2WSH* or *P2SH nested P2WSH*.
 
@@ -43,6 +44,14 @@ Although the output script of the P2SH nested P2WSH addresses is the same as the
 OP_HASH160
 <hash of the P2WSH output script>
 OP_EQUAL
+```
+### P2TR 
+
+In P2TR addresses the reedem script is only hashed with SHA256. The output script is also a little simpler:
+
+```
+OP_CHECKSIGADD
+<hash of the P2TR>
 ```
 
 #### Examples
