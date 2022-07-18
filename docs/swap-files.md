@@ -1,6 +1,6 @@
 # Swap files
 
-All applications that save files for Swaps to the disk should format them in a standardized way. This is especially important for Normal Submarine Swaps so that they can be refunded not only in the application but also in our Boltz frontend.
+All applications that save files for Swaps to the disk should format them in a standardized way. This is especially important for Normal Submarine Swaps so that they can be refunded not only in the application but also in our Portico frontend.
 
 ## Refund Files
 
