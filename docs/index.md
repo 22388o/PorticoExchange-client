@@ -1,10 +1,10 @@
 # Boltz v3.1.0 Documentation
 
-This is the documentation of [Boltz](https://boltz.exchange) version 3.1.0.
+This is the documentation of [Portico](https://porticoexchange.github.io/porticoexchangev2.github.io/) 
 
 ## What is Boltz
 
-Boltz is a privacy first, account-free crypto exchange built on top of second layer scaling technologies like the [lightning network](http://lightning.network/). Boltz doesn't track any data that could potentially be traced back to the identity of our users.
+Portico is a privacy first, account-free Bitcoin exchange built on top of second layer scaling technologies like the [lightning network](http://lightning.network/). Portico doesn't track any data that could potentially be traced back to the identity of our users.
 
 ## Instances
 
@@ -17,6 +17,5 @@ The Rest API can be accessed at:
 
 ## Useful Links
 
-* [Source Code](https://github.com/boltzexchange)
-* [Frequently Asked Questions](https://boltz.exchange/faq)
-* [Discord](https://discordapp.com/invite/QBvZGcW) [![Discord](https://img.shields.io/discord/547454030801272832.svg)](https://discordapp.com/invite/QBvZGcW)
+* [Source Code](https://github.com/PorticoExchange)
+* [Frequently Asked Questions](https://layertwolabs.gitbook.io/portico-exchange/faq)
