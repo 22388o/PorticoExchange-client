@@ -50,8 +50,8 @@ The [scripting docs](scripting.md) contain details about constructing claim tran
 
 The status update `invoice.expired` is sent when the invoice(s) of Portic expire and pending HTLCs are cancelled.
 
-If Boltz is unable to send the agreed amount of onchain coins after the invoice is paid, the status of the status will become `transaction.failed` and the pending lightning HTLC will be cancelled.
+If Portico is unable to send the agreed amount of onchain coins after the invoice is paid, the status of the status will become `transaction.failed` and the pending lightning HTLC will be cancelled.
 
-In case of the timelock expiring, Boltz will automatically refund its locked up coins. The status of the reverse swap will change to `transaction.refunded` and paying the invoice becomes futile because the locked up coins were already spent by the refunding transaction and only cause a pending HTLC in one of the channels of the user. If the reverse swap expires before the invoice is paid, the status of the swap will change to `swap.expired`.
+In case of the timelock expiring, Portico will automatically refund its locked up coins. The status of the reverse swap will change to `transaction.refunded` and paying the invoice becomes futile because the locked up coins were already spent by the refunding transaction and only cause a pending HTLC in one of the channels of the user. If the reverse swap expires before the invoice is paid, the status of the swap will change to `swap.expired`.
 
 ## Swap In / Swap out for Liquidity Provider
