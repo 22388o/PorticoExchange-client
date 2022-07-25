@@ -13,7 +13,7 @@ We are running and maintaining two Boltz instances that can be used - one on [te
 The Rest API can be accessed at:
 
 * [Testnet](https://portico-exchange-frontend-v2.vercel.app/)
-* [Mainnet]soon
+* [Mainnet] soon
 
 ## Useful Links
 
