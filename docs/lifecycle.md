@@ -6,6 +6,7 @@ There are two types of [Atomic Swaps](https://en.bitcoin.it/wiki/Atomic_swap):
 
 - [Normal Submarine Swaps](#normal-submarine-swaps)
 - [Reverse Submarine Swaps](#reverse-submarine-swaps)
+- .[Swap In / Swap out for Liquidity Provier](#Swap-In-Swap-Out-for-Liquidity-Provider)
 
 ## Normal Submarine Swaps
 
