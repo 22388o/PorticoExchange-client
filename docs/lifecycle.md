@@ -39,7 +39,7 @@ When a Channel Creation is involved in the Swap protocol, the backend will send 
 
 ## Reverse Submarine Swaps
 
-Reverse swaps are from lightning to onchain coins. In this scenario the user generates a preimage, creates SHA256 hash of it and sends that hash to Portico. With that hash Portico creates a hold invoice, that can only be settled when the preimage is revealed to the boltz backend. The user pays that invoice, but the lightning coins are not transferred to Boltz yet because it doesn't know the preimage. Therefore, the backend locks up onchain coins using the same hash so that these can be claimed with the preimage. When the claim transaction is broadcasted by the user, Boltz detects the preimage and in turn claims the lightning coins.
+Reverse swaps are from lightning to onchain coins. In this scenario the user generates a preimage, creates SHA256 hash of it and sends that hash to Portico. With that hash Portico creates a hold invoice, that can only be settled when the preimage is revealed to the Portico backend. The user pays that invoice, but the lightning coins are not transferred to Portico yet because it doesn't know the preimage. Therefore, the backend locks up onchain coins using the same hash so that these can be claimed with the preimage. When the claim transaction is broadcasted by the user, Porrtico detects the preimage and in turn claims the lightning coins.
 
 The [scripting docs](scripting.md) contain details about constructing claim transactions.
 
@@ -47,7 +47,7 @@ The [scripting docs](scripting.md) contain details about constructing claim tran
 2. `minerfee.paid`: only if the instance requires prepaying miner fees (our official instance do not) or the Reverse Swap enabled the Ethereum prepay miner fee; event is sent when the miner fee invoice is paid
 3. `transaction.mempool`: the lockup transaction is found in the mempool which will happen after the user pay the hold invoice
 4. `transaction.confirmed`: the lockup transaction is included in a block. This status can and will be skipped if the user wants to accept a 0-conf transaction
-5. `invoice.settled`: the transaction claiming the onchain coins was broadcasted and Boltz received the offchain coins
+5. `invoice.settled`: the transaction claiming the onchain coins was broadcasted and Portico received the offchain coins
 
 The status update `invoice.expired` is sent when the invoice(s) of Portic expire and pending HTLCs are cancelled.
 
