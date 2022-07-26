@@ -2,7 +2,7 @@
 
 ## Introduction
 
-There are two types of [Atomic Swaps](https://en.bitcoin.it/wiki/Atomic_swap):
+There are three types of [Atomic Swaps](https://en.bitcoin.it/wiki/Atomic_swap):
 
 - [Normal Submarine Swaps](#normal-submarine-swaps)
 - [Reverse Submarine Swaps](#reverse-submarine-swaps)
